@@ -4,6 +4,8 @@ from random import randrange
 img_file = 't.jpg'
 video = cv2.VideoCapture('cra.mp4')
 classifier = 'cars.xml'
+# create car classifier
+car_tracker = cv2.CascadeClassifier(classifier)
 
 while True:
         (read_successful,frame) = video.read()
@@ -12,8 +14,7 @@ while True:
                 grey_image = cv2.cvtColor(frame,cv2.COLOR_BGR2GRAY)
         else:
                  break
-        # create car classifier
-        car_tracker = cv2.CascadeClassifier(classifier)
+
         # detect cars
         cars = car_tracker.detectMultiScale(grey_image)
         for (x, y, w, h) in cars:
