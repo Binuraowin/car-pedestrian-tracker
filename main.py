@@ -22,7 +22,7 @@ while True:
 
         cv2.imshow("cars",frame)
 
-        cv2.waitKey()
+        cv2.waitKey(1)
 
 
 """"
