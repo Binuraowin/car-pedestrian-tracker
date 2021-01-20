@@ -28,7 +28,12 @@ while True:
 
         cv2.imshow("cars",frame)
 
-        cv2.waitKey(1)
+        key =cv2.waitKey(1)
+        # this for stops this when click the q button in ASCII Q==81 && q==113
+        if key == 81 or key == 113:
+                break
+
+video.release()
 
 
 """"
